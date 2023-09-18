@@ -53,7 +53,7 @@ public class ColaboradorServicePortImpI implements IColaboradorServicePort {
     @Override
     public ColaboradorResponseDTO buscarPorNome(String nome) {
         var colaborador = this.colaboradorRepository.buscarPorNome(nome);
-        var response = new ColaboradorResponseDTO(colaborador.getId(), colaborador.getNome(), colaborador.getSenha(), colaborador.getHierarquia(), colaborador.getScore(), colaborador.getComplexidade());
+        var response = new ColaboradorResponseDTO(colaborador.getId(), colaborador.getNome(), colaborador.getSenha(), colaborador.getHierarquia(), colaborador.getScore(), colaborador.getComplexidade(), colaborador.getIdPai());
         return response;
     }
 
