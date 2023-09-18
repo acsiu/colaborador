@@ -23,7 +23,6 @@ import br.com.acsiu.dominio.portas.interfaces.IColaboradorServicePort;
 public class ColaboradorController {
 
     private final IColaboradorServicePort colaboradorServicePort;
-
     public ColaboradorController(IColaboradorServicePort colaboradorServicePort) {
         this.colaboradorServicePort = colaboradorServicePort;
     }

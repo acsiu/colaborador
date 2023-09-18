@@ -11,6 +11,7 @@ import br.com.acsiu.infraestrutura.adaptadores.interfaces.IColaboradorRepository
 public class ArquiteturaHexagonalApplication {
 
     public static void main(String[] args) {
+        // System.setProperty("spring.devtools.restart.enabled", "true");
         SpringApplication.run(ArquiteturaHexagonalApplication.class, args);
     }
 }
