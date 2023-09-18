@@ -13,5 +13,4 @@ public class ArquiteturaHexagonalApplication {
     public static void main(String[] args) {
         SpringApplication.run(ArquiteturaHexagonalApplication.class, args);
     }
-
 }

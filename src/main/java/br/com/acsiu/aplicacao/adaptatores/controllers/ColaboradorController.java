@@ -47,7 +47,6 @@ public class ColaboradorController {
     public ResponseEntity<List<ColaboradorDTO>> getColaboradores() {
         return ResponseEntity.ok(colaboradorServicePort.buscarColaboradores());
     }
-
     @GetMapping("/buscar-por-nome/{nome}")
     public ResponseEntity<?> buscar(@PathVariable String nome) {
         return ResponseEntity.ok(colaboradorServicePort.buscarPorNome(nome));
