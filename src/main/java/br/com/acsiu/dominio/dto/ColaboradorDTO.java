@@ -7,7 +7,7 @@ public class ColaboradorDTO {
 	private String hierarquia;
 	private String score;
 	private String complexidade;
-
+	private Integer idPai;
 	public Integer getId() {
 		return id;
 	}
@@ -23,7 +23,6 @@ public class ColaboradorDTO {
 	public String getSenha() {
 		return senha;
 	}
-
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
@@ -51,16 +50,29 @@ public class ColaboradorDTO {
 		this.complexidade = complexidade;
 	}
 
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getIdPai() {
+		return idPai;
+	}
+
+	public void setIdPai(Integer idPai) {
+		this.idPai = idPai;
+	}
+
 	public ColaboradorDTO() {
 	}
 
-	public ColaboradorDTO(Integer id, String nome, String senha, String hierarquia, String vScore, String complexidade) {
+	public ColaboradorDTO(Integer id, String nome, String senha, String hierarquia, String vScore, String complexidade, Integer idPai) {
 		this.id = id;
 		this.nome = nome;
 		this.senha = senha;
 		this.hierarquia = hierarquia;
 		this.score = vScore;
 		this.complexidade = complexidade;
+		this.idPai = idPai;
 	}
 
 }

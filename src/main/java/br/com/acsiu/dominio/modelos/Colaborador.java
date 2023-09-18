@@ -10,6 +10,7 @@ public class Colaborador {
 	private String hierarquia;
 	private String score;
 	private String complexidade;
+	private Integer idPai;
 
 	public Integer getId() {
 		return id;
@@ -35,13 +36,18 @@ public class Colaborador {
 		return complexidade;
 	}
 
-	public Colaborador(Integer id, String nome, String senha, String hierarquia, String score, String complexidade) {
+	public Integer getIdPai() {
+		return idPai;
+	}
+
+	public Colaborador(Integer id, String nome, String senha, String hierarquia, String score, String complexidade, Integer idPai) {
 		this.id = id;
 		this.nome = nome;
 		this.senha = senha;
 		this.hierarquia = hierarquia;
 		this.score = score;
 		this.complexidade = complexidade;
+		this.idPai =idPai;
 	}
 
 	public Colaborador(ColaboradorDTO dto) {
@@ -50,9 +56,10 @@ public class Colaborador {
 		this.hierarquia = dto.getHierarquia();
 		this.score = dto.getScore();
 		this.complexidade = dto.getComplexidade();
+		this.idPai = dto.getIdPai();
 	}
 
 	public ColaboradorDTO toColaboradorDTO() {
-		return new ColaboradorDTO(this.id, this.nome, this.senha, this.hierarquia, this.score, this.complexidade);
+		return new ColaboradorDTO(this.id, this.nome, this.senha, this.hierarquia, this.score, this.complexidade, this.idPai);
 	}
 }

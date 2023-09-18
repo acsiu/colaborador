@@ -42,7 +42,7 @@ public class ColaboradorRepository implements IColaboradorRepositoryPort {
     @Override
     public void alterar(Integer id, Colaborador colaborador) {
         var colaboradorEntity = this.colaboradorRepository.findById(id).get();
-        var obj = new Colaborador(id, colaborador.getNome(), colaborador.getSenha(), colaborador.getHierarquia(), colaborador.getScore(), colaborador.getComplexidade());
+        var obj = new Colaborador(id, colaborador.getNome(), colaborador.getSenha(), colaborador.getHierarquia(), colaborador.getScore(), colaborador.getComplexidade(), colaborador.getIdPai());
         colaboradorEntity.atualizar(obj);
         this.colaboradorRepository.save(colaboradorEntity);
     }
