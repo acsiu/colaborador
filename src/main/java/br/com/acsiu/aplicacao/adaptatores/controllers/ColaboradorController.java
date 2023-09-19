@@ -1,8 +1,7 @@
 package br.com.acsiu.aplicacao.adaptatores.controllers;
 
-import java.util.List;
-
-import br.com.acsiu.dominio.dto.ColaboradorResponseDTO;
+import br.com.acsiu.dominio.dto.ColaboradorDTO;
+import br.com.acsiu.dominio.portas.interfaces.IColaboradorServicePort;
 import br.com.acsiu.dominio.util.Utils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.acsiu.dominio.dto.ColaboradorDTO;
-import br.com.acsiu.dominio.portas.interfaces.IColaboradorServicePort;
+import java.util.List;
 
 @RestController
 @RequestMapping("colaborador")
