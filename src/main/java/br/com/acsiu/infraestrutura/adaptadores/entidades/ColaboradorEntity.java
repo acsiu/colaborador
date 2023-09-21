@@ -16,7 +16,7 @@ import javax.swing.*;
 @Table(name = "colaborador")
 public class ColaboradorEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
     private String senha;
