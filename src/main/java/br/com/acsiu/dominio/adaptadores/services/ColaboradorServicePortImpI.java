@@ -58,15 +58,15 @@ public class ColaboradorServicePortImpI implements IColaboradorServicePort {
     }
 
     public void exibeColabores(List<ColaboradorDTO> lista) {
-        for (ColaboradorDTO cc : lista) {
-            exibeRecursivamente("", cc);
+        for (ColaboradorDTO dto : lista) {
+            exibeRecursivamente("", dto);
         }
     }
 
-    private void exibeRecursivamente(String indent, ColaboradorDTO co) {
-        String c = indent + " " + co.getId();
-        System.out.println(c);
-        for (ColaboradorDTO filho : co.getFilhos()) {
+    private void exibeRecursivamente(String indent, ColaboradorDTO dto) {
+        String nome = indent + " " + dto.getNome();
+        System.out.println(nome);
+        for (ColaboradorDTO filho : dto.getFilhos()) {
             exibeRecursivamente("  " + indent, filho);
         }
     }
