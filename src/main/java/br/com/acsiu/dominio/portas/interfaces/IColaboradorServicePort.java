@@ -1,10 +1,9 @@
 package br.com.acsiu.dominio.portas.interfaces;
 
-import java.util.List;
-
 import br.com.acsiu.dominio.dto.ColaboradorDTO;
 import br.com.acsiu.dominio.dto.ColaboradorResponseDTO;
-import br.com.acsiu.dominio.modelos.Colaborador;
+
+import java.util.List;
 
 public interface IColaboradorServicePort {
 
