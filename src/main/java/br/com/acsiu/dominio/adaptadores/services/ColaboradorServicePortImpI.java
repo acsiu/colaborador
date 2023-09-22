@@ -1,5 +1,6 @@
 package br.com.acsiu.dominio.adaptadores.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,6 +14,7 @@ import br.com.acsiu.dominio.util.PasswordUtil;
 
 public class ColaboradorServicePortImpI implements IColaboradorServicePort {
 
+    private List<String> strColaborador = new ArrayList<>();
     private final IColaboradorRepositoryPort colaboradorRepository;
 
     public ColaboradorServicePortImpI(IColaboradorRepositoryPort colaboradorRepository) {
@@ -57,18 +59,22 @@ public class ColaboradorServicePortImpI implements IColaboradorServicePort {
         return response;
     }
 
-    public void exibeColabores(List<ColaboradorDTO> lista) {
+    public List<String> exibeColabores(List<ColaboradorDTO> lista) {
+
         for (ColaboradorDTO dto : lista) {
-            exibeRecursivamente("", dto);
+            strColaborador.addAll( exibeRecursivamente("", dto) );
         }
+        return strColaborador;
     }
 
-    private void exibeRecursivamente(String indent, ColaboradorDTO dto) {
-        String nome = indent + " " + dto.getNome();
-        System.out.println(nome);
+    private List<String> exibeRecursivamente(String indent, ColaboradorDTO dto) {
+        // String nome = indent + " " + dto.getNome();
+        // System.out.println(nome);
+        strColaborador.add(indent + " " + dto.getNome());
         for (ColaboradorDTO filho : dto.getFilhos()) {
-            exibeRecursivamente("  " + indent, filho);
+            strColaborador.addAll( exibeRecursivamente("  " + indent, filho) );
         }
+        return strColaborador;
     }
 
 }
