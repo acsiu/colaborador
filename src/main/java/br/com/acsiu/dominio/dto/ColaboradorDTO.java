@@ -1,5 +1,8 @@
 package br.com.acsiu.dominio.dto;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class ColaboradorDTO {
 	private Integer id;
 	private String nome;
@@ -8,6 +11,25 @@ public class ColaboradorDTO {
 	private String score;
 	private String complexidade;
 	private Integer idPai;
+
+	private ColaboradorDTO pai;
+	private List<ColaboradorDTO> filhos = new LinkedList<>();
+	public ColaboradorDTO getPai() {
+		return pai;
+	}
+
+	public void setPai(ColaboradorDTO pai) {
+		pai.filhos.add(this);
+		this.pai = pai;
+	}
+
+	public List<ColaboradorDTO> getFilhos() {
+		return filhos;
+	}
+
+	public void setFilhos(List<ColaboradorDTO> filhos) {
+		this.filhos = filhos;
+	}
 	public Integer getId() {
 		return id;
 	}
