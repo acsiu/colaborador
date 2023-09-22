@@ -18,7 +18,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
 # deixamos o hibernate responsável por ler nossas entidades e criar as tabelas do nosso banco de dados automaticamente
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
 # configuração do Hibernate para reconhecer o nome de tabelas em caixa alta
 #      naming:
 #        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
